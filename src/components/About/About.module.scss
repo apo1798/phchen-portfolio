@@ -1,0 +1,72 @@
+@import "../Layout.module.scss";
+@import "../variables.module.scss";
+
+.about-container {
+  @include bigContainer;
+
+  padding: 7rem 3rem;
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  h2 {
+    margin-bottom: 2rem;
+  }
+}
+
+.text-container {
+  flex-basis: 60rem;
+  flex-grow: 0.3;
+
+  h2 {
+    color: $secondary-color;
+  }
+
+  // h2 {
+  //   position: relative;
+
+  //   &::after {
+  //     position: absolute;
+  //     top: 50%;
+  //     right: 50%;
+  //     content: "";
+  //     display: block;
+  //     width: 20rem;
+  //     height: 0.2rem;
+  //     background-color: white;
+  //   }
+  // }
+}
+
+.picture-container {
+  display: flex;
+  justify-content: center;
+
+  flex-basis: 35rem;
+  flex-grow: 1;
+}
+
+.picture-outline {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: -5%;
+    right: -3%;
+    width: 100%;
+    height: 100%;
+    border: 4px solid $secondary-color;
+  }
+}
+
+.align-icon {
+  @include align-icon;
+  flex-wrap: wrap;
+
+  svg {
+    margin-right: 1rem;
+  }
+}

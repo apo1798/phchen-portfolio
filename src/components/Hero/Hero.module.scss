@@ -1,0 +1,124 @@
+@import "../variables.module.scss";
+
+.hero-container {
+  position: relative;
+  height: 100vh;
+  background-attachment: fixed;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  &::before,
+  &::after {
+    filter: brightness(40%);
+  }
+}
+
+.github-icon {
+  position: absolute;
+  top: max(4rem, 5%);
+  left: max(4rem, 3%);
+  color: #fff;
+  z-index: 2;
+
+  svg {
+    transition: all 0.5s ease;
+    color: #fff;
+  }
+
+  &:hover svg {
+    transform: translateY(-0.2rem);
+    color: orange;
+  }
+}
+
+.hero-text {
+  font-family: Roboto Mono;
+  margin-left: 3.5rem;
+  // position: absolute;
+  // top: 50%;
+  // left: 25%;
+  // transform: translate(-25%, -40%);
+  color: #fff;
+  white-space: nowrap; // make sure it's single line
+  text-shadow: 2px 2px 1px #000;
+}
+
+.typewriter {
+  position: relative;
+  width: max-content;
+
+  animation: typewriter-animation 3s steps(22) both;
+  animation-delay: 1.5s;
+  animation-duration: 2.5s;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1; // make sure words can be selected
+    border-right: 4px solid orange;
+    animation: blink-caret 1.5s infinite both;
+  }
+}
+
+.hand-waving {
+  display: inline-block;
+  position: relative;
+  transform-origin: 70% 70%;
+  animation: wave-animation 3s ease;
+  animation-delay: 5s;
+
+  &:hover {
+    animation: wave-animation 3s infinite ease;
+    cursor: default;
+  }
+}
+
+@keyframes typewriter-animation {
+  from {
+    clip-path: polygon(0% 0, 0% 100%, 0 100%, 0 0);
+  }
+  to {
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0%);
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  } /* Reset for the last half to pause */
+  100% {
+    transform: rotate(0deg);
+  }
+}

@@ -1,0 +1,43 @@
+$background-color: #5c4530;
+$text-color-primary: rgb(241, 241, 241);
+$header-bg-color: rgb(25, 25, 25);
+$link-default-color: rgb(66, 142, 223);
+$secondary-color: rgb(111, 208, 0);
+
+// html {
+//   font-size: 62.5%;
+// }
+
+// * {
+//   box-sizing: border-box;
+//   padding: 0;
+//   margin: 0;
+// }
+
+// body {
+//   background-color: $background-color;
+//   color: $text-color-primary;
+// }
+
+// a:link,
+// a:visited {
+//   font-family: inherit;
+//   text-decoration: none;
+//   color: $link-default-color;
+//   font-weight: bold;
+// }
+
+// ul,
+// ol {
+//   list-style: none;
+// }
+
+@mixin bigContainer {
+  margin: 0 auto;
+  max-width: 1240px;
+}
+
+@mixin align-icon {
+  display: flex;
+  align-items: center;
+}

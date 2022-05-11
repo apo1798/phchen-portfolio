@@ -1,0 +1,25 @@
+@import '../variables.module.scss';
+
+.header {
+  padding: 1.5rem 3rem;
+  background-color: $header-bg-color;
+}
+
+.headerContainer {
+  @include bigContainer;
+  height: 3rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: Inconsolata;
+}
+
+.fixed-header {
+  color: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
