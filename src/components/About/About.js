@@ -1,6 +1,6 @@
 import React from 'react';
 import AboutTech from './AboutTech';
-import AboutPagination from './AboutPicture';
+import AboutPicture from './AboutPicture';
 
 import {
   aboutContainer,
@@ -43,7 +43,7 @@ const About = () => {
       </div>
       <div className={pictureContainer}>
         <div className={pictureOutline}>
-          <AboutPagination />
+          <AboutPicture />
         </div>
       </div>
     </section>

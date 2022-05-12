@@ -5,21 +5,44 @@
   background-color: $header-bg-color;
 }
 
-.headerContainer {
-  @include bigContainer;
-  height: 3rem;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  font-family: Inconsolata;
-}
-
 .fixed-header {
   color: white;
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
+  z-index: 100;
+}
+
+.headerContainer {
+  @include bigContainer;
+  height: 3rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-family: Inconsolata;
+}
+
+.github-icon {
+  color: #fff;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+
+  svg {
+    transition: all 0.5s ease;
+    color: #fff;
+  }
+
+  &:hover svg {
+    transform: translateY(-0.2rem);
+    color: orange;
+  }
+}
+
+.space-under {
+  height: 6rem;
+  width: 100%;
 }

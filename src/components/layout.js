@@ -1,21 +1,22 @@
-import * as React from "react"
+import * as React from 'react';
 
-import Header from "./Header/Header"
-import "./variables.module.scss"
-import { bodyContainer, contentContainer } from "./Layout.module.scss"
+import Header from './Header/Header';
+import './variables.module.scss';
+import { contentContainer } from './Layout.module.scss';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, stickyHeader }) => {
   return (
-    <section className={bodyContainer}>
-      <Header />
+    <section>
+      <Header stickyHeader={stickyHeader} />
 
       <main className={contentContainer}>{children}</main>
+
       <footer>
         © {new Date().getFullYear()} &middot; Built with
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
+        <a href='https://www.gatsbyjs.com'>Gatsby</a>
       </footer>
     </section>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

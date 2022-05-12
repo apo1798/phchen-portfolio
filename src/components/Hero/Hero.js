@@ -1,20 +1,17 @@
-import React from "react"
+import React, { useEffect, useRef } from 'react';
 
-import { graphql, useStaticQuery } from "gatsby"
-import { getImage } from "gatsby-plugin-image"
-import { BgImage } from "gbimage-bridge"
-// import { StaticImage } from "gatsby-plugin-image"
-import { GitHub } from "react-feather"
+import { graphql, useStaticQuery } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
+import { BgImage } from 'gbimage-bridge';
 
 import {
   heroContainer,
-  githubIcon,
   heroText,
   typewriter,
   handWaving,
-} from "./Hero.module.scss"
+} from './Hero.module.scss';
 
-const Hero = () => {
+const Hero = ({ setStickyHeader }) => {
   const { backgroundImage } = useStaticQuery(graphql`
     query HeroImage {
       backgroundImage: file(relativePath: { eq: "coding_desk.jpg" }) {
@@ -23,27 +20,35 @@ const Hero = () => {
         }
       }
     }
-  `)
-  const heroImage = getImage(backgroundImage)
+  `);
+  const heroImage = getImage(backgroundImage);
+
+  const heroRef = useRef();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      if (entry.isIntersecting === true) {
+        setStickyHeader(false);
+      } else if (entry.isIntersecting === false) {
+        setStickyHeader(true);
+      }
+    });
+    observer.observe(heroRef.current);
+  }, []);
 
   return (
-    <BgImage image={heroImage} className={heroContainer}>
-      <a
-        href="https://github.com/apo1798/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className={githubIcon}
-      >
-        <GitHub size={36} />
-      </a>
-      <div className={heroText}>
-        <h1>
-          Hello World! This is PH Chen.<span className={handWaving}>👋</span>
-        </h1>
-        <h1 className={typewriter}>I build things on web.</h1>
-      </div>
-    </BgImage>
-  )
-}
+    <section ref={heroRef}>
+      <BgImage image={heroImage} className={heroContainer}>
+        <div className={heroText}>
+          <h1>
+            Hello World! This is PH Chen.<span className={handWaving}>👋</span>
+          </h1>
+          <h1 className={typewriter}>I build things on web.</h1>
+        </div>
+      </BgImage>
+    </section>
+  );
+};
 
-export default Hero
+export default Hero;

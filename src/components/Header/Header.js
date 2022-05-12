@@ -1,63 +1,38 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React from 'react';
 import {
   header,
+  githubIcon,
   headerContainer,
   fixedHeader,
-  icon,
+  spaceUnder,
 } from './Header.module.scss';
+import { GitHub } from 'react-feather';
 
 import Navbar from './Navbar';
 
-const Header = () => {
-  const [headerIsVisible, setHeaderIsVisible] = useState(true);
-  const headerRef = useRef();
-
-  console.log(headerIsVisible);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-
-        if (
-          entry.isIntersecting === false &&
-          window.scrollY > window.innerHeight
-        ) {
-          console.log('show sticky navbar');
-          setHeaderIsVisible(false);
-        } else if (
-          entry.isIntersecting === true ||
-          window.scrollY < window.innerHeight
-        ) {
-          console.log('show normal navbar');
-          setHeaderIsVisible(true);
-        }
-      },
-      {
-        rootMargin: `-${headerRef.current.getBoundingClientRect().height}px`,
-      }
-    );
-    observer.observe(headerRef.current);
-
-    // return () => {
-    //   observer.unobserve(headerRef.current);
-    // };
-  }, []);
-
-  const headerClass = headerIsVisible
-    ? `${header}`
-    : `${header} ${fixedHeader}`;
+const Header = ({ stickyHeader }) => {
+  const headerClass = stickyHeader ? `${header} ${fixedHeader}` : `${header}`;
 
   return (
-    <header
-      ref={headerRef}
-      className={headerClass}
-      // className={headerClass}
-    >
-      <div className={headerContainer}>
-        <Navbar />
-      </div>
-    </header>
+    <>
+      <header className={headerClass}>
+        <div className={headerContainer}>
+          <a
+            href='https://github.com/apo1798/'
+            target='_blank'
+            rel='noopener noreferrer'
+            className={githubIcon}
+          >
+            <GitHub size={36} />
+          </a>
+          <div>
+            <Navbar />
+          </div>
+        </div>
+      </header>
+      {stickyHeader && <div className={spaceUnder}></div>}
+      {/* 可以想一下怎麼寫會更好＝＝ */}
+    </>
   );
 };
 

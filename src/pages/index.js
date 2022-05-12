@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 
@@ -6,19 +6,18 @@ import Layout from '../components/layout';
 import Hero from '../components/Hero/Hero';
 import Seo from '../components/seo';
 import About from '../components/About/About';
+import Work from '../components/Work/Work';
 
 const IndexPage = () => {
-  // const
+  const [stickyHeader, setStickyHeader] = useState(false);
 
   return (
     <>
-      <Hero />
-      <Layout>
+      <Hero setStickyHeader={setStickyHeader} />
+      <Layout stickyHeader={stickyHeader}>
         <Seo title='Home' />
         <About />
-        <About />
-        <About />
-        <p>hello</p>
+        <Work />
       </Layout>
     </>
   );
