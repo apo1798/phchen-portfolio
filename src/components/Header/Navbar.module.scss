@@ -9,5 +9,11 @@
 }
 
 .navbar ul li:not(:last-child) {
-  margin-right: 5rem;
+  margin-right: 3rem;
+}
+
+@media (max-width: 45em) {
+  .navbar {
+    display: none;
+  }
 }

@@ -35,12 +35,25 @@ ol {
   list-style: none;
 }
 
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 h1 {
   font-size: 3.6rem;
+  font-family: Roboto Mono;
 }
 
 h2 {
+  font-size: 3.2rem;
+  font-family: Roboto Mono;
+}
+
+h3 {
   font-size: 2.6rem;
+  font-family: Ubuntu;
 }
 
 p {
@@ -66,8 +79,4 @@ p {
       transform: scale(1);
     }
   }
-}
-
-.content-container {
-  @include bigContainer;
 }

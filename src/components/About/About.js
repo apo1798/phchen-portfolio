@@ -1,6 +1,6 @@
 import React from 'react';
 import AboutTech from './AboutTech';
-import AboutPicture from './AboutPicture';
+import { StaticImage } from 'gatsby-plugin-image';
 
 import {
   aboutContainer,
@@ -43,7 +43,11 @@ const About = () => {
       </div>
       <div className={pictureContainer}>
         <div className={pictureOutline}>
-          <AboutPicture />
+          <StaticImage
+            src='../../images/about_pic.jpg'
+            placeholder='BLURRED'
+            alt='me studying'
+          />
         </div>
       </div>
     </section>

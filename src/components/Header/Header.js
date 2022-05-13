@@ -1,4 +1,7 @@
 import React from 'react';
+import Navbar from './Navbar';
+import MobileNavbar from './MobileNavbar';
+
 import {
   header,
   githubIcon,
@@ -7,8 +10,6 @@ import {
   spaceUnder,
 } from './Header.module.scss';
 import { GitHub } from 'react-feather';
-
-import Navbar from './Navbar';
 
 const Header = ({ stickyHeader }) => {
   const headerClass = stickyHeader ? `${header} ${fixedHeader}` : `${header}`;
@@ -27,6 +28,7 @@ const Header = ({ stickyHeader }) => {
           </a>
           <div>
             <Navbar />
+            <MobileNavbar />
           </div>
         </div>
       </header>

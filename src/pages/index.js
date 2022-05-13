@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'gatsby';
-import { StaticImage } from 'gatsby-plugin-image';
 
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import Hero from '../components/Hero/Hero';
 import Seo from '../components/seo';
 import About from '../components/About/About';
 import Work from '../components/Work/Work';
+import Contact from '../components/Contact/Contact';
 
 const IndexPage = () => {
   const [stickyHeader, setStickyHeader] = useState(false);
@@ -15,9 +14,10 @@ const IndexPage = () => {
     <>
       <Hero setStickyHeader={setStickyHeader} />
       <Layout stickyHeader={stickyHeader}>
-        <Seo title='Home' />
+        <Seo title='Portfolio' />
         <About />
         <Work />
+        <Contact />
       </Layout>
     </>
   );

@@ -35,10 +35,10 @@ const Hero = ({ setStickyHeader }) => {
       }
     });
     observer.observe(heroRef.current);
-  }, []);
+  }, [setStickyHeader]);
 
   return (
-    <section ref={heroRef}>
+    <section ref={heroRef} id='home'>
       <BgImage image={heroImage} className={heroContainer}>
         <div className={heroText}>
           <h1>
