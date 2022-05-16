@@ -1,8 +1,8 @@
-@import "../variables.module.scss";
+@import '../variables.module.scss';
 
 .align-icon {
-  color: rgb(111, 208, 0);
   @include align-icon;
+  color: rgb(111, 208, 0);
   margin-bottom: 1rem;
 
   svg {

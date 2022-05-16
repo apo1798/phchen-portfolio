@@ -12,8 +12,6 @@ import {
 const MobileNavbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  console.log(menuOpen);
-
   const menuOpenHandler = () => {
     setMenuOpen((state) => !state);
   };

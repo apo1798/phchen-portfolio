@@ -95,5 +95,3 @@ const Work = () => {
 };
 
 export default Work;
-
-//{ title, projectName, description,techs, picture, reverse }

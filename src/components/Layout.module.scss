@@ -26,7 +26,6 @@ a {
     font-family: inherit;
     text-decoration: none;
     color: $link-default-color;
-    font-weight: bold;
   }
 }
 
@@ -78,5 +77,15 @@ p {
     &:active::after {
       transform: scale(1);
     }
+  }
+}
+
+.full-page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  main {
+    flex-grow: 1;
   }
 }

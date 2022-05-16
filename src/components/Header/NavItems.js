@@ -1,4 +1,5 @@
 import React from 'react';
+import { navigate } from '@reach/router';
 
 import { navItem } from './NavItems.module.scss';
 
@@ -7,6 +8,10 @@ const NavItems = ({ setMenuOpen, isMobile = false }) => {
 
   const clickNavHandler = (link) => {
     const linkSection = link.toLowerCase();
+    if (!document.getElementById(linkSection)) {
+      return navigate('/');
+      // to handle 404 page navigation back to index
+    }
     document.getElementById(linkSection).scrollIntoView({ behavior: 'smooth' });
 
     // for closing mobile menu
@@ -23,26 +28,6 @@ const NavItems = ({ setMenuOpen, isMobile = false }) => {
           </button>
         </li>
       ))}
-      {/* <li> */
-      /* <Link to='#home' onClick={closeMenuHandler}>
-          Home
-        </Link>
-      </li>
-      <li>
-        <Link to='#about' onClick={closeMenuHandler}>
-          About
-        </Link>
-      </li>
-      <li>
-        <Link to='#works' onClick={closeMenuHandler}>
-          Works
-        </Link>
-      </li>
-      <li>
-        <Link to='#contact' onClick={closeMenuHandler}>
-          Contact
-        </Link>
-      </li> */}
     </ul>
   );
 };
