@@ -18,6 +18,11 @@ const IndexPage = () => {
         data-domain='phchen-portfolio.netlify.app'
         src='https://plausible.io/js/script.js'
       ></script>
+      <script
+        defer
+        data-domain='phchen-portfolio.netlify.app'
+        src='http://localhost/js/script.js'
+      ></script>
       <Layout stickyHeader={stickyHeader}>
         <Seo title='Portfolio' />
         <About />
