@@ -13,7 +13,7 @@ const IndexPage = () => {
   return (
     <>
       <Hero setStickyHeader={setStickyHeader} />
-      <script
+      {/* <script
         defer
         data-domain='phchen-portfolio.netlify.app'
         src='https://plausible.io/js/script.js'
@@ -22,7 +22,7 @@ const IndexPage = () => {
         defer
         data-domain='phchen-portfolio.netlify.app'
         src='http://localhost/js/script.js'
-      ></script>
+      ></script> */}
       <Layout stickyHeader={stickyHeader}>
         <Seo title='Portfolio' />
         <About />

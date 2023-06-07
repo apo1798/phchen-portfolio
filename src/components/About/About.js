@@ -31,17 +31,21 @@ const About = () => {
           Hello! My name is Pohan Chen, and I enjoy building things on the web,
           especially with integrating geographical data.
         </p>
-        <p>
-          In 2021 October, my frontend journey started. My work experience
-          includes <br />
+        <div>
+          <p>
+            In 2021 October, my frontend journey started. My work experience
+            includes
+          </p>
           <ul>
             <li>1) introducing Shopify Theme development from scartch</li>
             <li>2) building stock/product manangement app on React.js</li>
             <li>3) donation campaign page on Next.js</li>
           </ul>
-          Projects above integrate libraries like TailwindCSS, Material UI,
-          React Query, Jotai, etc.
-        </p>
+          <p>
+            Projects above integrate libraries like TailwindCSS, Material UI,
+            React Query, Jotai, etc.
+          </p>
+        </div>
         <p>Here a list of technologies I've been using these days: </p>
         <AboutTech />
       </div>

@@ -18,12 +18,12 @@ const MobileNavbar = () => {
 
   return (
     <div className={mobileNavbar}>
-      <div
+      <button
         className={`${hamburger} ${menuOpen ? `${hamburgerMenuOpen}` : ''}`}
         onClick={menuOpenHandler}
       >
         <div className={hamburgerLine}></div>
-      </div>
+      </button>
       {menuOpen && (
         <div className={menuContainer}>
           <NavItems setMenuOpen={setMenuOpen} isMobile={true} />
