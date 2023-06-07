@@ -3,12 +3,14 @@ date: '2'
 title: '2. MapQuake'
 image: './map.png'
 github: 'https://github.com/apo1798/map-quake'
-external: 'https://apo1798.github.io/map-quake/'
+external: 'https://map-quake.vercel.app/'
 tech:
   - USGS API
   - React Leaflet
-  - Redux Toolkit
-  - React Router
+  - React Query
+  - TypeScript
+  - Next.js App Router
+  - TailwindCSS
 ---
 
-A map visualizing worldwide earthquake events in Leafleat and OpenStreet Map, fetching data from USGS. Users can change the data and minimun magnitude. States are managed by Redux Toolkit.
+A map visualizing worldwide earthquake events in Leafleat and OpenStreet Map, fetching data from USGS. Users can change the data and minimun magnitude. It implements the intercepting route on Next.js 13.

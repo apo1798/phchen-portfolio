@@ -5,7 +5,8 @@ image: './match.png'
 github: 'https://github.com/apo1798/memory-match'
 external: 'https://apo1798.github.io/memory-match/'
 tech:
-  - JavaScript OOP
+  - JavaScript
+  - OOP
   - Theme Toggle
 ---
 

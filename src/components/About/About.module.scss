@@ -22,6 +22,10 @@
   h2 {
     color: $secondary-color;
   }
+
+  p {
+    line-height: 2.6rem;
+  }
 }
 
 .picture-container {
@@ -31,13 +35,14 @@
   flex-grow: 1;
   // overflow: hidden;
 
-  img {
-    transition: all 0.5s ease-in-out;
-    filter: brightness(0.8);
-  }
+  // img {
+  //   transition: all 0.5s ease-in-out;
+  //   filter: brightness(0.8);
+  // }
 
   .picture-outline {
     position: relative;
+    filter: brightness(0.85);
 
     &::after {
       position: absolute;
@@ -50,17 +55,14 @@
 
       transition: all 0.3s ease-in-out;
     }
-  }
 
-  &:hover {
-    img {
-      filter: brightness(0.9);
-    }
-    pointer-events: none;
+    &:hover {
+      filter: brightness(0.98);
 
-    .picture-outline::after {
-      top: -3%;
-      right: -1%;
+      &::after {
+        top: -4px;
+        right: -4px;
+      }
     }
   }
 }

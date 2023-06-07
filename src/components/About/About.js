@@ -24,7 +24,7 @@ const About = () => {
             target='_blank'
             rel='noopener noreferrer'
           >
-            National Taiwan University
+            NTU
           </a>
         </p>
         <p>
@@ -32,13 +32,17 @@ const About = () => {
           especially with integrating geographical data.
         </p>
         <p>
-          I studied Python at college, and it helped my high school teachers
-          sort and compile English vocabulary words. After graduation, I've
-          worked as newspaper editor and secretary. Due to the curiosity in web
-          world, my frontend journey started in 2021 October, starting learning
-          HTML, CSS, and JavaScript.
+          In 2021 October, my frontend journey started. My work experience
+          includes <br />
+          <ul>
+            <li>1) introducing Shopify Theme development from scartch</li>
+            <li>2) building stock/product manangement app on React.js</li>
+            <li>3) donation campaign page on Next.js</li>
+          </ul>
+          Projects above integrate libraries like TailwindCSS, Material UI,
+          React Query, Jotai, etc.
         </p>
-        <p>Here are some technologies I've been using these days: </p>
+        <p>Here a list of technologies I've been using these days: </p>
         <AboutTech />
       </div>
       <div className={pictureContainer}>
@@ -46,7 +50,7 @@ const About = () => {
           <StaticImage
             src='../../images/about_pic.jpg'
             placeholder='BLURRED'
-            alt='me studying'
+            alt="PH's studying"
           />
         </div>
       </div>
